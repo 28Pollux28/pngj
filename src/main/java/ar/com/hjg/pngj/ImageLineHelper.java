@@ -305,7 +305,7 @@ public class ImageLineHelper {
 
 	private static int[] palette2rgb(IImageLine line, PngChunkPLTE pal, PngChunkTRNS trns, int[] buf,
 			boolean alphaForced) {
-		boolean isalpha = trns != null;
+		boolean isalpha = trns != null || alphaForced;
 		int channels = isalpha ? 4 : 3;
 		ImageLineInt linei = (ImageLineInt) (line instanceof ImageLineInt ? line : null);
 		ImageLineByte lineb = (ImageLineByte) (line instanceof ImageLineByte ? line : null);
